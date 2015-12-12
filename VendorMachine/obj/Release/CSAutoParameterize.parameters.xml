@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Vendormachine-Web.config Connection String" description="Vendormachine Connection String used in web.config by the application to access the database." defaultValue="data source=websitsql01;initial catalog=VendorMachine;Integrated Security=False;User Id=vendor-user;Password=Bentley_123;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\alkesh\.naik\\Documents\\Visual\ Studio\ 2013\\Projects\\VendorMachine\\VendorMachine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Vendormachine']/@connectionString" />
+  </parameter>
+</parameters>

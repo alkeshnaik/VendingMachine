@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="VendorMachine" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\alkesh\.naik\\Documents\\Visual\ Studio\ 2013\\Projects\\VendorMachine\\VendorMachine\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\alkesh\.naik\\Documents\\Visual\ Studio\ 2013\\Projects\\VendorMachine\\VendorMachine\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Vendormachine-Web.config Connection String" description="" value="data source=tcp:phcm6j8myt.database.windows.net,1433;initial catalog=VendorMachine_db;user id=vendor-user@phcm6j8myt;password=Bentley1;MultipleActiveResultSets=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\alkesh\.naik\\Documents\\Visual\ Studio\ 2013\\Projects\\VendorMachine\\VendorMachine\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Vendormachine']/@connectionString" />
+  </parameter>
+</parameters>

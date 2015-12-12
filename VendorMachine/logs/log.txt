@@ -1,0 +1,65 @@
+ERROR 2015-09-16 12:27:22,311  4422ms UserDataController     GetAllUserData     - Hi
+INFO  2015-09-16 15:08:31,629 29795ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,Item,Serial,Site,Status,Price,Timestamp) values (dwqdewd,B6,dwd,Bentley,VEND,88,9/16/2015 3:08:31 PM)
+ERROR 2015-09-16 15:08:31,964 30131ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '3'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at VendorMachine.Controllers.UserDataController.GetUserData(String cad, String ate, String item, String site, String stats, Int32 price, String eriali) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 121
+ClientConnectionId:789a75c0-3983-4fd5-bae6-7fc57a7181cd
+Error Number:102,State:1,Class:15
+INFO  2015-09-16 15:09:11,494  7489ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,Item,Serial,Site,Status,Price,Timestamp) values (dwqdewd,B6,dwd,Bentley,VEND,88,'9/16/2015 3:09:11 PM')
+ERROR 2015-09-16 15:09:11,843  7838ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'dwqdewd'.
+Invalid column name 'B6'.
+Invalid column name 'dwd'.
+Invalid column name 'Bentley'.
+Invalid column name 'VEND'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at VendorMachine.Controllers.UserDataController.GetUserData(String cad, String ate, String item, String site, String stats, Int32 price, String eriali) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 121
+ClientConnectionId:154f9dbe-637a-4913-b81a-c262612b1ad0
+Error Number:207,State:1,Class:16
+INFO  2015-09-16 15:11:14,023 36176ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,Item,Serial,Site,Status,Price,Timestamp) values (dwqdewd,B6,dwd,Bentley,VEND,88,'9/16/2015 3:11:14 PM')
+ERROR 2015-09-16 15:11:14,378 36531ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '9'.
+Unclosed quotation mark after the character string ')'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at VendorMachine.Controllers.UserDataController.GetUserData(String cad, String ate, String item, String site, String stats, Int32 price, String eriali) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 121
+ClientConnectionId:bdd2c1e6-96c7-411a-80fc-279b9662e542
+Error Number:102,State:1,Class:15
+INFO  2015-09-16 15:11:52,077  6748ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,Item,Serial,Site,Status,Price,Timestamp) values ('dwqdewd','B6','dwd','Bentley','VEND','88,'9/16/2015 3:11:52 PM')
+ERROR 2015-09-16 15:11:52,570  7241ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '9'.
+Unclosed quotation mark after the character string ')'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at VendorMachine.Controllers.UserDataController.GetUserData(String cad, String ate, String item, String site, String stats, Int32 price, String eriali) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 121
+ClientConnectionId:3f6433fe-af92-4ae5-acb6-8627ddbad642
+Error Number:102,State:1,Class:15
+INFO  2015-09-16 15:12:30,185 11173ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,Item,Serial,Site,Status,Price,Timestamp) values ('dwqdewd','B6','dwd','Bentley','VEND',88,'9/16/2015 3:12:30 PM')
+INFO  2015-09-16 15:36:41,741 82541ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','9/16/2015 3:36:41 PM')
+INFO  2015-09-16 15:50:09,220 11318ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','9/16/2015 3:50:09 PM')
+INFO  2015-09-18 12:30:26,130 11960ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','9/18/2015 12:30:26 PM')
+INFO  2015-10-07 11:59:45,555 20690ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','10/7/2015 11:59:45 AM')
+INFO  2015-12-02 12:26:56,503 29364ms UserDataController     GetUserData        - the string Insert into Employees_CardNumber(CardNumber) values ('012345678')
