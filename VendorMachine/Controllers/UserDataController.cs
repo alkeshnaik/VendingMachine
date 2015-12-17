@@ -8,22 +8,23 @@ using System.Web.Http;
 using VendorMachine.Models;
 using System.Configuration;
 using VendorMachine.Helper;
+using VendorMachine.Common;
 
 namespace VendorMachine.Controllers
 {
     public class UserDataController : ApiController
     {
-
         string connectionString = ConfigurationManager.ConnectionStrings["Vendormachine"].ToString();
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public IEnumerable<UserData> GetAllUserData()
+        public IEnumerable<vendorData> GetAllUserData()
         {
-                List<UserData> Datauser = new List<UserData>();
+            List<vendorData> Datauser = new List<vendorData>();
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+                    
 
                     //Microsoft.TeamFoundation.Release.MonitorServices.Actions.NormalizedStoreCreatorAction e = new Microsoft.TeamFoundation.Release.MonitorServices.Actions.NormalizedStoreCreatorAction();
                     //Microsoft.TeamFoundation.Release.MonitorServices.Dsc.OnPrem.OnPremDeploymentActions f = new Microsoft.TeamFoundation.Release.MonitorServices.Dsc.OnPrem.OnPremDeploymentActions();
@@ -42,7 +43,7 @@ namespace VendorMachine.Controllers
                         {
                             while (reader.Read())
                             {
-                                UserData user = new UserData();
+                                vendorData user = new vendorData();
                                 user.ID = reader.GetInt32(0);
                                 user.CardNumber = reader.GetString(1);
                                 user.Item = reader.GetString(2);
@@ -68,7 +69,7 @@ namespace VendorMachine.Controllers
 
         public IHttpActionResult GetUserData(int id)
         {
-            UserData user = new UserData();
+            vendorData user = new vendorData();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 //
@@ -103,49 +104,36 @@ namespace VendorMachine.Controllers
             return Ok(user);
         }
 
+
+
         public IHttpActionResult GetUserData(string card, string date, string item, int price, string serial, string site, string status, string time)
         {
-            UserData user = new UserData();
-            int recordsAffected = 0;
+            userData user = new userData();
+            int recordsAffected = 1;
+            userData val = null;
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    //
-                    // Open the SqlConnection.
-                    //
-                    con.Open();
-                    //
-                    // The following code uses an SqlCommand based on the SqlConnection.
-                    //
-                    string query = "Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('" + card + "','" + date + "','" + item + "','" + serial + "','" + site + "','" + status + "'," + price + ",'" + time + "','" + DateTime.Now.ToString() + "')";
-                    //string query = "Insert into Employees_CardNumber(CardNumber) values ('" + card +"')";
-                    logger.Info("the string " + query);
-//                    using (SqlCommand command = new SqlCommand("Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('" + card + "','" + date + "','" + item + "','" + serial + "','" + site + "','" + status + "'," + price + ",'" + time + "','" + DateTime.Now.ToString() + "')", con))
-                    using (SqlCommand command = new SqlCommand(query, con))
-                    {
-                        recordsAffected = command.ExecuteNonQuery();
-                    }
-                    //using (SqlDataReader reader = command.ExecuteNonQuery())
-                    //{
-                    //    while (reader.Read())
-                    //    {
-                    //        user.ID = reader.GetInt32(0);
-                    //        user.card = reader.GetString(1);
-                    //       // Console.WriteLine("{0} {1} {2}",
-                    //       // reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
-                    //    }
-                    //}
-                }
+                val=DBLogic.InsertCard(connectionString, card, date, item, price, serial, site, status, time);
             }
             catch(Exception ex)
             {
                 logger.Error("getuserdata", ex);
             }
 
-            
-            return Ok(recordsAffected+" Success");
+            //HelperClass.SendEmail("alkesh.naik@bentley.com", "Alkesh Naik", "a1", "00006FAACB");
+
+            if (val != null)
+            {
+                string name = val.FirstName + " " + val.LastName;
+                HelperClass.SendEmail(val.Email,name,val.Item,card);
+                return Ok(recordsAffected + " Success");
+            }
+            else
+            {
+                //HelperClass.SendEmail();
+                return Ok("Data already present");                
+            }
             //return Json
         }
     }

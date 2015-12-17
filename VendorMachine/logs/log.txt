@@ -63,3 +63,81 @@ INFO  2015-09-16 15:50:09,220 11318ms UserDataController     GetUserData        
 INFO  2015-09-18 12:30:26,130 11960ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','9/18/2015 12:30:26 PM')
 INFO  2015-10-07 11:59:45,555 20690ms UserDataController     GetUserData        - the string Insert into VendorData(CardNumber,date,Item,Serial,Site,Status,Price,time,Timestamp) values ('012345678','0109','A3','ABCDEF123456','Noida','VEND',234,'1200','10/7/2015 11:59:45 AM')
 INFO  2015-12-02 12:26:56,503 29364ms UserDataController     GetUserData        - the string Insert into Employees_CardNumber(CardNumber) values ('012345678')
+ERROR 2015-12-12 13:23:41,905 73169ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'InsertVendorData'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 29
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 113
+ClientConnectionId:4c9a8123-2d20-4ae6-b919-92e3644ae2cb
+Error Number:2812,State:62,Class:16
+ERROR 2015-12-12 13:25:52,256 34905ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'InsertVendorData'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 29
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 113
+ClientConnectionId:a99d60f9-3bcc-4420-b3c7-de1ca651fe9e
+Error Number:2812,State:62,Class:16
+ERROR 2015-12-12 17:02:04,803 13390ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value 'VEND' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 30
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 114
+ClientConnectionId:b09c2178-73b7-49ec-baa6-b83ac6958891
+Error Number:245,State:1,Class:16
+ERROR 2015-12-12 17:22:22,456  8890ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value 'VEND' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 30
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 114
+ClientConnectionId:87b9c877-2617-42dd-9a0a-d46771ab7eeb
+Error Number:245,State:1,Class:16
+ERROR 2015-12-13 12:50:21,232 31731ms UserDataController     GetUserData        - getuserdata
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 43
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 114
+ERROR 2015-12-13 13:29:03,354 46913ms UserDataController     GetUserData        - getuserdata
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VendorMachine.Helper.DBLogic.InsertCard(String connectionString, String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Helper\DBLogic.cs:line 37
+   at VendorMachine.Controllers.UserDataController.GetUserData(String card, String date, String item, Int32 price, String serial, String site, String status, String time) in c:\Users\alkesh.naik\Documents\Visual Studio 2013\Projects\VendorMachine\VendorMachine\Controllers\UserDataController.cs:line 114
