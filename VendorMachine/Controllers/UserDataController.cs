@@ -17,9 +17,9 @@ namespace VendorMachine.Controllers
         string connectionString = ConfigurationManager.ConnectionStrings["Vendormachine"].ToString();
         readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public IEnumerable<vendorData> GetAllUserData()
+        public IEnumerable<userData> GetAllUserData()
         {
-            List<vendorData> Datauser = new List<vendorData>();
+            List<userData> Datauser = new List<userData>();
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -37,21 +37,21 @@ namespace VendorMachine.Controllers
                     //
                     // The following code uses an SqlCommand based on the SqlConnection.
                     //
-                    using (SqlCommand command = new SqlCommand("select ID,CardNumber,Item,Serial,Site,Status,Price,Timestamp from VendorData", con))
+                    using (SqlCommand command = new SqlCommand("select E.FirstName,E.LastName,E.Email,VP.ItemDescription from dbo.VendorData VD inner join dbo.Employees E on E.AccescardHex=VD.CardNumber inner join dbo.Vending_Products VP on VP.ItemSlot=VD.Item", con))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                vendorData user = new vendorData();
-                                user.ID = reader.GetInt32(0);
-                                user.CardNumber = reader.GetString(1);
-                                user.Item = reader.GetString(2);
-                                user.Serial = reader.GetString(3);
-                                user.Site = reader.GetString(4);
-                                user.Status = reader.GetString(5);
-                                user.Price = reader.GetInt32(6);
-                                user.TimeStamp = reader.GetDateTime(7);
+                                userData user = new userData();
+                                user.FirstName = reader.GetString(0);
+                                user.LastName = reader.GetString(1);
+                                user.Email = reader.GetString(2);
+                                user.Item = reader.GetString(3);
+                                //user.Site = reader.GetString(4);
+                                //user.Status = reader.GetString(5);
+                                //user.Price = reader.GetInt32(6);
+                                //user.TimeStamp = reader.GetDateTime(7);
                                 Datauser.Add(user);
                             }
                         }
@@ -67,7 +67,7 @@ namespace VendorMachine.Controllers
             return Datauser;
         }
 
-        public IHttpActionResult GetUserData(int id)
+        public IHttpActionResult GetUserData(string email)
         {
             vendorData user = new vendorData();
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -79,7 +79,7 @@ namespace VendorMachine.Controllers
                 //
                 // The following code uses an SqlCommand based on the SqlConnection.
                 //
-                using (SqlCommand command = new SqlCommand("select ID,CardNumber,Item,Serial,Site,Status,Price,Timestamp from VendorData where id=" + id, con))
+                using (SqlCommand command = new SqlCommand("select ID,CardNumber,Item,Serial,Site,Status,Price,Timestamp from VendorData where id=" + email, con))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {

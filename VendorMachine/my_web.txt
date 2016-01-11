@@ -1,0 +1,2 @@
+﻿INFO  2015-12-17 14:31:58,816 18464ms UserDataController     GetUserData        - hello
+INFO  2015-12-17 15:17:54,844  1064ms UserDataController     GetAllUserData     - First time
